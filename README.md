@@ -1,3 +1,4 @@
+
 # Movie Recommendation System Using Machine Learning with Python
 
 This project implements a movie recommendation system using **machine learning techniques**, specifically **cosine similarity**, to suggest movies based on a given input movie. The recommendation is based on multiple features like **genres**, **keywords**, **tagline**, **cast**, and **director**.
@@ -51,6 +52,3 @@ movie_name = input('Enter your favourite movie name: ')
 find_close_match = difflib.get_close_matches(movie_name, list_of_all_titles)
 sorted_similar_movies = sorted(similarity_score, key=lambda x: x[1], reverse=True)
 pip install numpy pandas scikit-learn
-
-
-
