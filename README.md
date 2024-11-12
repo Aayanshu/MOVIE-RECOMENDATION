@@ -1,6 +1,6 @@
 # Movie Recommendation System Using Machine Learning with Python
 
-This project implements a **Movie Recommendation System** that suggests movies based on a given input movie. It uses **Cosine Similarity** and the **TF-IDF** vectorizer to calculate the similarity between movies. The system recommends similar movies by analyzing the **genres**, **keywords**, **tagline**, **cast**, and **director** of the movies.
+This project implements a **Movie Recommendation System** that suggests movies based on a given input movie. It uses **Cosine Similarity** and **TF-IDF Vectorization** to calculate the similarity between movies. The system recommends movies by analyzing various features such as **genres**, **keywords**, **tagline**, **cast**, and **director**.
 
 ## Table of Contents
 
@@ -10,13 +10,14 @@ This project implements a **Movie Recommendation System** that suggests movies b
 4. [Preprocessing](#preprocessing)
 5. [Cosine Similarity](#cosine-similarity)
 6. [How to Use](#how-to-use)
-7. [License](#license)
+7. [Example](#example)
+8. [License](#license)
 
 ---
 
 ## Introduction
 
-This **Movie Recommendation System** uses a dataset of movies, extracting various features like genres, keywords, tagline, cast, and director. By combining these features into a single string, it uses **TF-IDF Vectorization** to convert the text data into numerical feature vectors. Then, it calculates the **Cosine Similarity** between the movies to recommend the most similar movies based on a user’s favorite movie.
+This **Movie Recommendation System** uses a dataset of movies, extracting features like genres, keywords, tagline, cast, and director. These features are then combined into a single text feature for each movie. The **TF-IDF Vectorization** technique is used to convert these text features into numerical feature vectors, which are then used to calculate **Cosine Similarity** to recommend the most similar movies based on a user's favorite movie.
 
 ---
 
@@ -31,5 +32,9 @@ Before running the project, ensure you have the following Python libraries insta
 
 You can install these libraries using the following pip command:
 
-```bash
-pip install numpy pandas scikit-learn
+movies_data = pd.read_csv('/path/to/movies.csv')
+combined_features = movies_data['genres'] + ' ' + movies_data['keywords'] + ' ' + movies_data['tagline'] + ' ' + movies_data['cast'] + ' ' + movies_data['director']
+vectorizer = TfidfVectorizer()
+feature_vectors = vectorizer.fit_transform(combined_features)
+similarity = cosine_similarity(feature_vectors)
+
