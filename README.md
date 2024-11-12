@@ -42,4 +42,15 @@ You can install these dependencies using the following command:
 
 ```bash
 pip install numpy pandas scikit-learn
+movies_data = pd.read_csv('/content/movies.csv')
+combined_features = movies_data['genres'] + ' ' + movies_data['keywords'] + ' ' + movies_data['tagline'] + ' ' + movies_data['cast'] + ' ' + movies_data['director']
+vectorizer = TfidfVectorizer()
+feature_vectors = vectorizer.fit_transform(combined_features)
+similarity = cosine_similarity(feature_vectors)
+movie_name = input('Enter your favourite movie name: ')
+find_close_match = difflib.get_close_matches(movie_name, list_of_all_titles)
+sorted_similar_movies = sorted(similarity_score, key=lambda x: x[1], reverse=True)
+pip install numpy pandas scikit-learn
+
+
 
