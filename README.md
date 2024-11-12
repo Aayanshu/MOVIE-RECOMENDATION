@@ -96,4 +96,3 @@ When prompted, enter the name of your favorite movie.
 The system will suggest a list of movies based on your input.
 License
 This project is open-source and available under the MIT License.
-
