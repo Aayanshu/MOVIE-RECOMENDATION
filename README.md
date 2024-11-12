@@ -30,7 +30,6 @@ Before running the project, ensure you have the following Python libraries insta
 - **Scikit-learn**: For feature extraction (TF-IDF) and calculating cosine similarity.
 - **Difflib**: For finding close matches to the user input movie name.
 
-You can install these libraries using the following pip command:
 
 movies_data = pd.read_csv('/path/to/movies.csv')
 combined_features = movies_data['genres'] + ' ' + movies_data['keywords'] + ' ' + movies_data['tagline'] + ' ' + movies_data['cast'] + ' ' + movies_data['director']
